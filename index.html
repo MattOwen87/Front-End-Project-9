@@ -8,11 +8,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400i" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
+
 </head>
 
 <body>
 <header>
-  <span id="appTitle">MyApp&trade;</span>
+  <span id="appTitle">My<i>App&trade;</i></span>
 
   <div id="myProfile">
   <svg class="bellIcon" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
@@ -28,12 +29,13 @@
   </g>
   </svg>
 
-  <img class="profileImage"src="images/Matt.jpg">
+  <img class="profileImage" src="images/Matt.jpg">
   <span class="profileName">Matthew Haworth</span>
 </div>
 
 </header>
 
+<div id="content">
 <nav>
 <a href="dashboard">
   <svg class="navIcon" version="1.1" id="Line_2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
@@ -117,8 +119,33 @@
 
 </nav>
 
+<div id="searchBar">
+<label>Dashboard</label>
+<input type="text" id="search" name="user_search" placeholder="Search">
+</div>
+
+<div id="alertMessage">
+  <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+   <span>Thank You For Using My<i>App&trade;</i></span>
+</div>
+
+<div id="lineChart">
+<h3>TRAFFIC</h3>
+<ul>
+<li><a href="#">Hourly</a></li>
+<li><a href="#">Daily</a></li>
+<li><a href="#">Weekly</a></li>
+<li><a href="#">Monthly</a></li>
+</ul>
+<canvas id="myChart" width="400" height="400"></canvas>
+</div>
 
 
+
+
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+<script type="text/javascript" src="js/main.js"></script>
 </body>
 
 </html>

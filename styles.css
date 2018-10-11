@@ -18,16 +18,53 @@ header {
 }
 
 
+h3 {
+  position: relative;
+  overflow: hidden;
+  padding: 10px;
+  float: left;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  display: inline-flex;
+  flex-direction: row;
+  list-style: none;
+  margin-right: 20px;
+  float: right;
+}
+
+li {
+  padding: 10px;
+}
+
+
+
+label {
+  font-size: 2em;
+  margin-left: 10px;
+}
+
+input {
+  padding: 15px;
+  width: 30%;
+  font-family: 'Libre Baskerville', serif;
+}
+
 nav {
-  display: flex;
+  display: inline-flex;
   flex-direction: column;
   background-color: #483D8B;
+  padding: 40px;
   width: 10%;
   height: 100%;
-  margin-right: 10px;
   align-items: center;
-  position: fixed;
-
+  position: relative;
+  overflow: hidden;
+  float: left;
 }
 
 
@@ -36,6 +73,51 @@ nav {
   height: 40px;
   margin: 20px;
 
+}
+
+#searchBar {
+  margin: 20px 10px 20px 10px;
+  padding: 20px;
+  position: relative;
+  overflow: hidden;
+
+}
+
+#search {
+  float: right;
+}
+
+#content{
+  position: absolute;
+  height: 100%;
+  width:100%;
+}
+
+#alertMessage {
+  margin: 0 auto;
+  padding: 20px;
+  width: 70%;
+  background-color: #6A5ACD;
+  color: #fff;
+  font-size: 1.2em;
+  position: relative;
+  overflow: hidden;
+
+}
+
+#myChart{
+  float: right;
+}
+
+#lineChart {
+  margin-top: 20px;
+}
+
+
+
+.closebtn {
+  float: right;
+  cursor: pointer;
 }
 
 
