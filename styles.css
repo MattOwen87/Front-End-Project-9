@@ -1,4 +1,8 @@
 
+/********************
+BASE STYLES
+********************/
+
 * {
   box-sizing: border-box;
 }
@@ -23,19 +27,51 @@ h3 {
   overflow: hidden;
   padding: 10px;
   float: left;
+  font-size: 1em;
 }
+
+h4 {
+  color: #483D8B;
+  margin: 0;
+  font-size: .7em;
+}
+
+
+
+p {
+  display: inline;
+  margin: 10px;
+  font-size: .7em;
+}
+
 
 a {
   text-decoration: none;
 }
 
 ul {
-  display: inline-flex;
+  list-style: none;
+}
+
+select {
+  padding: 30px;
+  margin: 20px 20px 20px 10px;
+  width: 90%;
+  font-family: 'Libre Baskerville', serif;
+}
+
+fieldset {
+  display: flex;
   flex-direction: row;
   list-style: none;
   margin-right: 20px;
+  width: 60%;
+  font-size: .5em;
+  border: none;
   float: right;
+
 }
+
 
 li {
   padding: 10px;
@@ -44,76 +80,247 @@ li {
 
 
 label {
-  font-size: 2em;
-  margin-left: 10px;
+  font-size: 1.5em;
+  margin: 20px;
+  border: none;
 }
 
 input {
+
   padding: 15px;
-  width: 30%;
+
   font-family: 'Libre Baskerville', serif;
 }
 
 nav {
-  display: inline-flex;
-  flex-direction: column;
+  display: flex;
+  flex-direction: row;
   background-color: #483D8B;
-  padding: 40px;
-  width: 10%;
-  height: 100%;
-  align-items: center;
-  position: relative;
-  overflow: hidden;
-  float: left;
+  padding: 20px;
+  width: 100%;
+  justify-content:  center;
+
+}
+
+legend {
+  display: none;
+}
+
+span {
+  display: inline;
+  font-size: .9em;
 }
 
 
-.navIcon {
-  width: 40px;
-  height: 40px;
-  margin: 20px;
+/********************
+ID STYLES
+********************/
 
+#lineChart{
+  float: right;
+}
+
+#lineDiv {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
 }
 
 #searchBar {
-  margin: 20px 10px 20px 10px;
-  padding: 20px;
   position: relative;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px 10px 20px 10px;
+  padding: 20px;
+
 
 }
 
 #search {
+  width: 90%;
   float: right;
 }
 
 #content{
-  position: absolute;
+  position: relative;
+  overflow: hidden;
   height: 100%;
   width:100%;
 }
 
 #alertMessage {
   margin: 0 auto;
-  padding: 20px;
+  padding: 10px;
   width: 70%;
   background-color: #6A5ACD;
   color: #fff;
-  font-size: 1.2em;
+  font-size: .8em;
   position: relative;
   overflow: hidden;
+}
+
+#socialStats {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+}
+
+#twitterLogo,
+#facebookLogo,
+#googleLogo {
+  display: flex;
+  flex-direction: row;
+  padding: 10px;
+  margin: 10px;
+  border: 1px solid #D8BFD8;
+  background-color: #F4F6F7;
+}
+
+#memberActivity{
+  display: flex;
+  flex-direction: column;
+}
+#newMembers {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  float: left;
+}
+
+#recentActivity {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
 
 }
 
-#myChart{
+#messageSettings{
+  display: flex;
+  flex-direction: column;
+}
+
+#messageUser {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  float: left;
+}
+
+#userSettings {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+}
+
+#appTitle {
+  justify-content: center;
+  font-size: 1em;
+  color: #fff;
+}
+
+#titleContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#myProfile {
   float: right;
-}
-
-#lineChart {
   margin-top: 20px;
 }
 
+#userSearchBar {
+    padding: 15px;
+    margin: 20px;
+    width: 80%;
+    font-family: 'Libre Baskerville', serif;
+}
 
+#messageBox {
+  padding: 20px 20px 100px 20px;
+  margin: 20px;
+  width: 80%;
+  font-family: 'Libre Baskerville', serif;
+}
+
+#submitButton {
+  padding: 20px;
+  margin: 10px 20px 20px 20px;
+  width: 80%;
+  color: #fff;
+  background-color: #6A5ACD;
+  font-family: 'Libre Baskerville', serif;
+}
+
+#saveButton {
+width: 40%;
+margin: 20px 20px 20px 20px;
+padding: 20px;
+color: #fff;
+background-color: #6A5ACD;
+}
+
+#cancelButton {
+width: 40%;
+margin: 20px 20px 20px 20px;
+padding: 20px;
+color: #fff;
+background-color: #ABB2B9;
+}
+
+#settingsButtons {
+  display: flex;
+  flex-direction: row;
+}
+
+#timeZone {
+  margin-top: 0;
+}
+
+
+/********************
+CLASS STYLES
+********************/
+
+
+.navIcon {
+  width: 20px;
+  height: 20px;
+  margin: 20px;
+}
+
+ .social path {
+  fill: #fff;
+}
+
+.social {
+  height: 60px;
+  width: 60px;
+  margin: 0 20px 0 20px;
+  padding: 15px;
+  align-items: center;
+  background-color: #483D8B;
+  border-radius: 40%;
+
+}
+
+
+
+.logoText {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  font-size: 1.7em;
+}
+
+.profileInfo {
+  display: flex;
+  flex-direction: row;
+}
 
 .closebtn {
   float: right;
@@ -121,30 +328,286 @@ nav {
 }
 
 
-
 .bellIcon {
-  width: 40px;
-  height: 40px;
+  width: 20px;
+  height: 20px;
   margin-right: 5px;
   border-right: solid 1px #fff;
 }
 
 .profileImage {
-  width: 40px;
-  height: 40px;
+  width: 30px;
+  height: 30px;
   border-radius: 50%;
 }
 
 .profileName {
   color: #fff;
+  font-size: .7em;
+}
+
+.profileMember {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+
+.memberDate {
+margin-left: auto;
+font-size: .5em;
+}
+
+.memberName {
+  font-size: .5em;
+}
+
+.activityLink  {
+  margin-left: auto;
+  font-size: 1.5em;
+  color: #483D8B;
+}
+
+.toggleButton {
   font-size: 1em;
 }
 
-#appTitle {
-  font-size: 1.5em;
-  color: #fff;
+.lightSwitch {
+  display: inline;
+  float: right;
+  margin: 0;
 }
 
-#myProfile {
+.settingsOptions {
+  float: left;
+  font-size: 1em;
+}
+
+/********************
+MEDIA QUERIES
+********************/
+
+
+@media screen and  (min-width: 768px) {
+
+  #myProfile{
+    margin-top: 0;
+  }
+
+  #titleContent {
+    display: inline;
+  }
+
+  #appTitle {
+    font-size: 1.3em;
+  }
+
+  .profileName {
+    font-size: .9em;
+  }
+
+  .profileImage {
+    width: 40px;
+    height: 40px;
+  }
+
+  .bellIcon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .navIcon {
+    width: 40px;
+    height: 40px;
+  }
+
+  #search {
+    width: 60%;
+  }
+
+  #alertMessage {
+    margin: 0 auto;
+    padding: 15px;
+    width: 70%;
+    font-size: 1em;
+  }
+
+  fieldset {
+    width: 60%;
+    font-size: .9em;
+  }
+
+  h4 {
+    font-size: .9em;
+  }
+
+  p {
+    font-size: .9em;
+  }
+
+  .social {
+    height: 70px;
+    width: 80px;
+    padding: 15px;
+  }
+
+  #memberActivity{
+    display: inline;
+
+  }
+  #newMembers {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    float: left;
+  }
+
+  #recentActivity {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+  }
+
+  #messageSettings{
+    display: inline;
+
+  }
+
+  #messageUser {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    float: left;
+  }
+
+  #userSettings {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+  }
+
+  .memberDate {
+  font-size: .7em;
+  }
+
+  .memberName {
+    font-size: .7em;
+  }
+
+  .activityLink  {
+    font-size: 1.7em;
+  }
+
+}
+
+@media screen and  (min-width: 1024px) {
+
+
+
+  #socialStats {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+
+  }
+
+  #lineDiv {
+    display: inline-block;
+  }
+
+  #searchBar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 20px 10px 20px 10px;
+    padding: 20px;
+
+
+  }
+
+  #search {
+    width: 50%;
+    margin-left: auto;
+  }
+
+  #donutDiv {
+    width: 50%;
+  }
+
+  #barDiv{
+    width: 50%;
+  }
+
+  #barDonut {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .memberDate {
+  font-size: .9em;
+  }
+
+  .memberName {
+    font-size: .9em;
+  }
+
+  .activityLink  {
+    font-size: 1.9em;
+  }
+
+
+  nav {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    height: 100%;
+    width: 10%;
+    align-items: center;
+    justify-content: flex-start;
+
+  }
+
+  #searchBar {
+    width: 90%;
+    float: right;
+  }
+
+  #alertMessage {
+    width: 50%;
+
+  }
+
+#memberActivity {
+  width: 90%;
   float: right;
+}
+
+#socialStats {
+  width: 90%;
+  float: right;
+}
+
+#messageSettings {
+  width: 90%;
+  float:right;
+}
+
+#barDonut {
+  width: 90%;
+  float: right;
+}
+
+#lineDiv {
+  width: 90%;
+  float: right;
+}
+
+#socialTitle {
+  width: 90%;
+  float: right;
+
+}
+
+
 }
