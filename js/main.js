@@ -85,3 +85,29 @@ var chart = new Chart(ctd, {
 
     }
 });
+
+/********************
+VARIABLES
+********************/
+
+const submitButton = document.getElementById('submitButton').value="Send";
+const saveButton = document.getElementById('saveButton').value="Save";
+const cancelButton = document.getElementById('cancelButton').value="Cancel";
+const userSearch = document.getElementById('userSearchBar');
+const messageUser = document.getElementById('messageBox');
+
+/********************
+SUBMIT FORM
+********************/
+
+
+
+submitButton.addEventListener('click', (event) => {
+
+if(userSearch === " " || messageUser === " "){
+  alert("ERROR Message Can Not Be Sent");
+} else {
+  alert("Your Message Has Been Sent");
+}
+
+});
