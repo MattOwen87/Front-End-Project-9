@@ -1,10 +1,33 @@
 
 /********************
+VARIABLES
+********************/
+
+const submitButton = document.getElementById('submitButton');
+const saveButton = document.getElementById('saveButton');
+const cancelButton = document.getElementById('cancelButton');
+const userSearch = document.getElementById('userSearchBar');
+const messageUser = document.getElementById('messageBox');
+const bellMessage = document.querySelector('.bellMessage');
+const bellDot = document.querySelector('.dot');
+const hourlyToggle = document.getElementById('hourly');
+const dailyToggle = document.getElementById('daily');
+const weeklyToggle = document.getElementById('weekly');
+const monthlyToggle = document.getElementById('monthly');
+const ctl = document.getElementById('lineChart').getContext('2d');
+const ctb = document.getElementById('barChart').getContext('2d');
+const ctd = document.getElementById('donutChart').getContext('2d');
+let users = ['Matthew Haworth', 'Victoria Chambers', 'Dale Byrd', 'Dawn Wood', 'Dan Oliver']
+const timeZone = document.querySelector('#timeZone');
+const emailSwitch = document.querySelector('#emailSwitch');
+const profileSwitch = document.querySelector('#profileSwitch');
+
+/********************
 LINE CHART
 ********************/
 
-var ctl = document.getElementById('lineChart').getContext('2d');
-var chart = new Chart(ctl, {
+
+var firstChart = new Chart(ctl, {
     // The type of chart we want to create
     responsive: true,
     type: 'line',
@@ -12,7 +35,8 @@ var chart = new Chart(ctl, {
 
     // The data for our dataset
     data: {
-        labels: ["", "16-22", "23-29", "30-5", "6-12", "13-19", "20-26", "27-3", "4-10", "11-17", "18-24", "25-31"],
+        labels: ["", "00am", "1am", "2am", "3am", "4am", "5am", "6am", "7am", "8am", "9am", "10am", "11am", "12pm",
+      "1pm", "2pm", "3pm", "4pm", "5pm", "6pm", "7pm", "8pm", "9pm", "10pm", "11pm"],
         datasets: [{
             backgroundColor: '#D4E6F1',
             borderColor: '#6A5ACD',
@@ -21,7 +45,8 @@ var chart = new Chart(ctl, {
             pointBorderWidth: 3,
             pointRadius: 6,
             lineTension: 0,
-            data: [0, 500, 1000, 800, 1000, 700, 500, 2200, 1500, 2300, 900, 1200],
+            data: [0, 500, 1000, 800, 1000, 700, 500, 2200, 1500, 2300, 900, 1200, 750, 600, 1000, 200, 500, 1200, 300, 900,
+            400, 1300, 2000, 2500, 1800],
         }]
     },
 
@@ -33,11 +58,143 @@ var chart = new Chart(ctl, {
     }
 });
 
+hourlyToggle.addEventListener('click', (event) => {
+  var hourlyLineChart = new Chart(ctl, {
+      // The type of chart we want to create
+      responsive: true,
+      type: 'line',
+
+
+      // The data for our dataset
+      data: {
+          labels: ["", "00am", "1am", "2am", "3am", "4am", "5am", "6am", "7am", "8am", "9am", "10am", "11am", "12pm",
+        "1pm", "2pm", "3pm", "4pm", "5pm", "6pm", "7pm", "8pm", "9pm", "10pm", "11pm"],
+          datasets: [{
+              backgroundColor: '#D4E6F1',
+              borderColor: '#6A5ACD',
+              borderWidth: 5,
+              pointBackgroundColor: '#F5F5F5',
+              pointBorderWidth: 3,
+              pointRadius: 6,
+              lineTension: 0,
+              data: [0, 500, 1000, 800, 1000, 700, 500, 2200, 1500, 2300, 900, 1200, 750, 600, 1000, 200, 500, 1200, 300, 900,
+              400, 1300, 2000, 2500, 1800],
+          }]
+      },
+
+      // Configuration options go here
+      options: {
+        legend: {
+          display: false
+        }
+      }
+  });
+})
+
+
+
+dailyToggle.addEventListener('click', (event) => {
+
+  var dailyLineChart = new Chart(ctl, {
+      // The type of chart we want to create
+      responsive: true,
+      type: 'line',
+
+
+      // The data for our dataset
+      data: {
+          labels: ["", "M", "T", "W", "T", "F", "S", "S"],
+          datasets: [{
+              backgroundColor: '#D4E6F1',
+              borderColor: '#6A5ACD',
+              borderWidth: 5,
+              pointBackgroundColor: '#F5F5F5',
+              pointBorderWidth: 3,
+              pointRadius: 6,
+              lineTension: 0,
+              data: [0, 500, 1000, 800, 1000, 700, 500, 2200, 1500, 2300, 900, 1200],
+          }]
+      },
+
+      // Configuration options go here
+      options: {
+        legend: {
+          display: false
+        }
+      }
+  });
+});
+
+weeklyToggle.addEventListener('click', (event) => {
+
+  var weeklyLineChart = new Chart(ctl, {
+      // The type of chart we want to create
+      responsive: true,
+      type: 'line',
+
+
+      // The data for our dataset
+      data: {
+          labels: ["", "1-12", "13-24", "25-40", "41-52"],
+          datasets: [{
+              backgroundColor: '#D4E6F1',
+              borderColor: '#6A5ACD',
+              borderWidth: 5,
+              pointBackgroundColor: '#F5F5F5',
+              pointBorderWidth: 3,
+              pointRadius: 6,
+              lineTension: 0,
+              data: [0, 500, 700, 1100, 300],
+          }]
+      },
+
+      // Configuration options go here
+      options: {
+        legend: {
+          display: false
+        }
+      }
+  });
+});
+
+monthlyToggle.addEventListener('click', (event) => {
+
+  var monthlyLineChart = new Chart(ctl, {
+      // The type of chart we want to create
+      responsive: true,
+      type: 'line',
+
+
+      // The data for our dataset
+      data: {
+          labels: ["", "J", "F", "M", "A", "M", "J", "J", "A", "S", "O", "N", "D" ],
+          datasets: [{
+              backgroundColor: '#D4E6F1',
+              borderColor: '#6A5ACD',
+              borderWidth: 5,
+              pointBackgroundColor: '#F5F5F5',
+              pointBorderWidth: 3,
+              pointRadius: 6,
+              lineTension: 0,
+              data: [0, 500, 1000, 800, 1000, 1500, 2000, 700, 1200, 400, 900, 600, 1500, 1300],
+          }]
+      },
+
+      // Configuration options go here
+      options: {
+        legend: {
+          display: false
+        }
+      }
+  });
+});
+
+
 /********************
 BAR CHART
 ********************/
 
-var ctb = document.getElementById('barChart').getContext('2d');
+
 var chart = new Chart(ctb, {
     // The type of chart we want to create
     type: 'bar',
@@ -65,7 +222,7 @@ var chart = new Chart(ctb, {
 DONUT CHART
 ********************/
 
-var ctd = document.getElementById('donutChart').getContext('2d');
+
 var chart = new Chart(ctd, {
     // The type of chart we want to create
     type: 'doughnut',
@@ -86,28 +243,46 @@ var chart = new Chart(ctd, {
     }
 });
 
+
 /********************
-VARIABLES
+ALERT ICON DOT
 ********************/
 
-const submitButton = document.getElementById('submitButton').value="Send";
-const saveButton = document.getElementById('saveButton').value="Save";
-const cancelButton = document.getElementById('cancelButton').value="Cancel";
-const userSearch = document.getElementById('userSearchBar');
-const messageUser = document.getElementById('messageBox');
+bellMessage.addEventListener('click', (event) => {
+bellDot.style.display = 'none';
+bellMessage.style.display = 'inline';
+});
+
 
 /********************
 SUBMIT FORM
 ********************/
 
-
-
 submitButton.addEventListener('click', (event) => {
 
-if(userSearch === " " || messageUser === " "){
-  alert("ERROR Message Can Not Be Sent");
+if(userSearch.value === "" || messageUser.value === ""){
+  alert("ERROR Message Can Not Be Sent")
 } else {
-  alert("Your Message Has Been Sent");
+  alert("Your Message Has Been Sent")
 }
 
 });
+
+
+/********************
+LOCAL STORAGE
+********************/
+
+if('localStorage' in window !== null){
+saveButton.addEventListener('click', (event) => {
+  localStorage.setItem('email', emailSwitch.checked);
+  localStorage.setItem('profile', profileSwitch.checked);
+  localStorage.setItem('tmeZne', timeZone.checked);
+});
+}
+
+cancelButton.addEventListener('click', (event) => {
+localStorage.clear();
+});
+
+console.log(localStorage);

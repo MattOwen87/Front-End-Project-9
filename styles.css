@@ -92,6 +92,12 @@ input {
   font-family: 'Libre Baskerville', serif;
 }
 
+ button {
+  padding: 15px;
+  font-family: 'Libre Baskerville', serif;
+}
+
+
 nav {
   display: flex;
   flex-direction: row;
@@ -109,6 +115,14 @@ legend {
 span {
   display: inline;
   font-size: .9em;
+}
+
+datalist {
+  display: none;
+}
+
+option {
+  font-family: 'Libre Baskerville', serif;
 }
 
 
@@ -382,6 +396,71 @@ font-size: .5em;
   font-size: 1em;
 }
 
+.dot {
+  height: 5px;
+  width: 5px;
+  margin-bottom: 15px;
+  background-color: lightgreen;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+
+.bellMessage {
+  position: relative;
+  font-size: .8em;
+}
+
+.bellMessage::before,
+.bellMessage::after {
+  position: absolute;
+  left: 50%;
+  opacity: 0;
+  z-index: -100;
+}
+
+.bellMessage:focus::before,
+.bellMessage:focus::after {
+  opacity: 1;
+  z-index: 100;
+  transform: scale(1) translateY(0)
+}
+
+.bellMessage::before {
+  border-style: solid;
+  border-width: 1em .75em 0 .75em;
+  border-color: #fff transparent transparent transparent;
+  bottom: 100%;
+  margin-left: -.5em;
+  content: "";
+  transform: scale(.6) translateY(-90%);
+  transition: all .65s cubic-bezier(.85, -0.18, .31, 1.26), opacity .65s .5s;
+}
+
+.bellMessage:focus::before {
+  transition-delay: .2s;
+}
+
+.bellMessage::after {
+  background: #fff;
+  border-radius: .25em;
+  bottom: 180%;
+  color: #6A5ACD;
+  width: 17.5em;
+  padding: 1em;
+  margin-left: -8.75em;
+  content: attr(data-tip);
+  transform: scale(.6) translateY(50%);
+  transition: all .65s cubic-bezier(.84, -.18, .31, 1.26) .2s;
+}
+
+.bellMessage:focus::after {
+  transition-delay: 0s;
+}
+
+
+
+
 /********************
 MEDIA QUERIES
 ********************/
@@ -389,6 +468,11 @@ MEDIA QUERIES
 
 @media screen and  (min-width: 768px) {
 
+.dot {
+  height: 10px;
+  width: 10px;
+  margin-bottom: 30px;
+}
   #myProfile{
     margin-top: 0;
   }
@@ -501,7 +585,11 @@ MEDIA QUERIES
 
 @media screen and  (min-width: 1024px) {
 
-
+  .dot {
+    height: 10px;
+    width: 10px;
+    margin-bottom: 30px;
+  }
 
   #socialStats {
     display: flex;

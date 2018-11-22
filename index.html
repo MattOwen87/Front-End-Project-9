@@ -19,7 +19,11 @@
   <span id="appTitle">My<i>App&trade;</i></span>
 
   <div id="myProfile">
-  <a href="#">
+  <span class="dot"></span>
+
+
+  <a href="#" class="bellMessage"  data-tip="You Have 2 New Messages & a Friend Request" tabindex="1">
+
   <svg class="bellIcon" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
   	 viewBox="0 0 32 32" style="enable-background:new 0 0 32 32;" xml:space="preserve">
   <style type="text/css">
@@ -277,9 +281,16 @@
 <form id="messageForm">
   <div id="messageUser">
     <h3>MESSAGE USER</h3>
-<input  type="text" id="userSearchBar" name="user_search" placeholder="Search For User">
-<textarea type="text" id="messageBox" name="userMessage" placeholder="Message for User"></textarea>
-<input type="submit" id="submitButton" name="submitButton">
+<input type="text" id="userSearchBar" name="user_search" placeholder="Search For User" list="users">
+<datalist id="users">
+<option value="Matthew Haworth">
+<option value="Victoria Chambers">
+<option value="Dale Byrd">
+<option value="Dawn Wood">
+<option value="Dan Oliver">
+</datalist>
+<textarea type="text" id="messageBox" name="userMessage" placeholder="Message For User"></textarea>
+<button type="submit" id="submitButton" name="submitButton">Send</button>
   </div>
 </form>
 
@@ -291,7 +302,7 @@
 <label class="switch-light switch-candy switch-ios" onclick="">
   <input type="checkbox">
 
-  <span class="lightSwitch">
+  <span class="lightSwitch" id="emailSwitch">
     <span class="switchText">OFF</span>
     <span class="switchText">ON</span>
     <a></a>
@@ -304,7 +315,7 @@
 <label class="switch-light switch-candy switch-ios" onclick="">
   <input type="checkbox">
 
-  <span class="lightSwitch">
+  <span class="lightSwitch" id="profileSwitch">
     <span>OFF</span>
     <span>ON</span>
     <a></a>
@@ -400,8 +411,8 @@
 
 
 <div id="settingsButtons">
-<input type="submit" id="saveButton" name="submitButton">
-<input type="submit" id="cancelButton" name="submitButton">
+<button type="submit" id="saveButton" name="submitButton">Save</button>
+<button type="submit" id="cancelButton" name="submitButton">Cancel</button>
 </div>
   </div>
 
