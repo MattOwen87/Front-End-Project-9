@@ -278,7 +278,7 @@ saveButton.addEventListener('click', (event) => {
   localStorage.setItem('email', emailSwitch.checked);
   localStorage.setItem('profile', profileSwitch.checked);
   localStorage.setItem('tmeZne', timeZone.checked);
-getRecentActivity();
+
 });
 
 }
