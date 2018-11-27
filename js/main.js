@@ -18,9 +18,10 @@ const ctl = document.getElementById('lineChart').getContext('2d');
 const ctb = document.getElementById('barChart').getContext('2d');
 const ctd = document.getElementById('donutChart').getContext('2d');
 let users = ['Matthew Haworth', 'Victoria Chambers', 'Dale Byrd', 'Dawn Wood', 'Dan Oliver']
-const timeZone = document.querySelector('#timeZone');
-const emailSwitch = document.querySelector('#emailSwitch');
-const profileSwitch = document.querySelector('#profileSwitch');
+const timeZone = document.getElementById('timeZone').value;
+const emailSwitch = document.getElementById('emailSwitch').value;
+const profileSwitch = document.getElementById('profileSwitch').value;
+
 
 /********************
 LINE CHART
@@ -273,11 +274,25 @@ if(userSearch.value === "" || messageUser.value === ""){
 LOCAL STORAGE
 ********************/
 
+function saveSettings(){
+  localStorage.setItem('email', emailSwitch);
+  localStorage.setItem('profile', profileSwitch);
+  localStorage.setItem('tmeZne', timeZone);
+
+
+};
+
+function loadSettings(){
+  const storedEmail = localStorage.getItem('email');
+  const storedProfile = localStorage.getItem('profile');
+  const storedTimeZone = localStorage.getItem('tmezne');
+
+};
+
 if('localStorage' in window && window['localStorage'] !== null){
 saveButton.addEventListener('click', (event) => {
-  localStorage.setItem('email', emailSwitch.checked);
-  localStorage.setItem('profile', profileSwitch.checked);
-  localStorage.setItem('tmeZne', timeZone.checked);
+
+saveSettings();
 
 });
 
