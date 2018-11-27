@@ -18,9 +18,9 @@ const ctl = document.getElementById('lineChart').getContext('2d');
 const ctb = document.getElementById('barChart').getContext('2d');
 const ctd = document.getElementById('donutChart').getContext('2d');
 let users = ['Matthew Haworth', 'Victoria Chambers', 'Dale Byrd', 'Dawn Wood', 'Dan Oliver']
-const timeZone = document.getElementById('timeZone').value;
-const emailSwitch = document.getElementById('emailSwitch').value;
-const profileSwitch = document.getElementById('profileSwitch').value;
+let timeZone = document.getElementById('timeZone');
+let emailSwitch = document.getElementById('emailSwitch');
+let profileSwitch = document.getElementById('profileSwitch');
 
 
 /********************
@@ -275,10 +275,9 @@ LOCAL STORAGE
 ********************/
 
 function saveSettings(){
-  localStorage.setItem('email', emailSwitch);
-  localStorage.setItem('profile', profileSwitch);
-  localStorage.setItem('tmeZne', timeZone);
-
+  localStorage.setItem('email', emailSwitch.checked);
+  localStorage.setItem('profile', profileSwitch.checked);
+  localStorage.setItem('tmeZne', timeZone.selectedIndex);
 
 };
 
@@ -289,14 +288,14 @@ function loadSettings(){
 
 };
 
-if('localStorage' in window && window['localStorage'] !== null){
+
 saveButton.addEventListener('click', (event) => {
 
 saveSettings();
 
 });
 
-}
+
 
 cancelButton.addEventListener('click', (event) => {
 localStorage.clear();
