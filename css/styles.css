@@ -293,6 +293,37 @@ background-color: #ABB2B9;
   margin-top: 0;
 }
 
+#popUp {
+  height: 280px;
+  width: 470px;
+  position: fixed;
+  bottom: 50%;
+  right: 50%;
+  border: 2px solid;
+  padding: 10px;
+  background-color: #fff;
+  border-radius: 9px;
+  display: none;
+  z-index: 1;
+}
+
+#closePopUp {
+  right: 5;
+  top: 5;
+  float: right;
+  background-color: #fff;
+  padding: 5px;
+  cursor: pointer;
+}
+
+#popUpTitle {
+  text-align: center;
+}
+
+#popUpContent {
+  font-family: 'Libre Baskerville', serif;
+}
+
 
 /********************
 CLASS STYLES
@@ -319,8 +350,6 @@ CLASS STYLES
   border-radius: 40%;
 
 }
-
-
 
 .logoText {
   display: flex;
@@ -402,41 +431,6 @@ font-size: .5em;
   border-radius: 50%;
   display: inline-block;
 }
-
-
-#popUp {
-  height: 280px;
-  width: 470px;
-  position: fixed;
-  bottom: 50%;
-  right: 50%;
-  border: 2px solid;
-  padding: 10px;
-  background-color: #fff;
-  border-radius: 9px;
-  display: none;
-  z-index: 1;
-}
-
-#closePopUp {
-  right: 5;
-  top: 5;
-  float: right;
-  background-color: #fff;
-  padding: 5px;
-  cursor: pointer;
-}
-
-#popUpTitle {
-  text-align: center;
-}
-
-#popUpContent {
-  font-family: 'Libre Baskerville', serif;
-}
-
-
-
 
 /********************
 MEDIA QUERIES
