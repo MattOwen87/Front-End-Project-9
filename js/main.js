@@ -8,7 +8,6 @@ const saveButton = document.getElementById('saveButton');
 const cancelButton = document.getElementById('cancelButton');
 const userSearch = document.getElementById('userSearchBar');
 const messageUser = document.getElementById('messageBox');
-const bellMessage = document.querySelector('.bellMessage');
 const bellDot = document.querySelector('.dot');
 const hourlyToggle = document.getElementById('hourly');
 const dailyToggle = document.getElementById('daily');
@@ -17,6 +16,9 @@ const monthlyToggle = document.getElementById('monthly');
 const ctl = document.getElementById('lineChart').getContext('2d');
 const ctb = document.getElementById('barChart').getContext('2d');
 const ctd = document.getElementById('donutChart').getContext('2d');
+const bellMessage = document.getElementById('bellMessage');
+const popUpMessage = document.getElementById('popUp');
+const closePopUp = document.getElementById('closePopUp');
 let users = ['Matthew Haworth', 'Victoria Chambers', 'Dale Byrd', 'Dawn Wood', 'Dan Oliver']
 let timeZone = document.getElementById('timeZone');
 let emailSwitch = document.getElementById('emailSwitch');
@@ -269,6 +271,20 @@ if(userSearch.value === "" || messageUser.value === ""){
 
 });
 
+/********************
+POPUP MESSAGE
+********************/
+bellMessage.addEventListener('click', (event) => {
+  popUpMessage.style.display = 'inline';
+});
+
+/********************
+CLOSE POPUP MESSAGE
+********************/
+
+closePopUp.addEventListener('click', (event) => {
+  popUpMessage.style.display = 'none';
+});
 
 /********************
 LOCAL STORAGE
@@ -284,8 +300,16 @@ function saveSettings(){
 function loadSettings(){
   const storedEmail = localStorage.getItem('email');
   const storedProfile = localStorage.getItem('profile');
-  const storedTimeZone = localStorage.getItem('tmezne');
-
+  const storedTimeZone = localStorage.getItem('tmeZne');
+  if(storedEmail){
+    emailSwitch.checked = JSON.parse(localStorage.email);
+  }
+  if(storedProfile){
+    profileSwitch.checked = JSON.parse(localStorage.profile);
+  }
+  if(storedTimeZone){
+    timeZone.selectedIndex = localStorage.tmeZne;
+  }
 };
 
 

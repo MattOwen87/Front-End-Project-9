@@ -13,7 +13,7 @@
 
 </head>
 
-<body onload = loadSettings()>
+<body onload = "loadSettings()">
 <header>
   <div id="titleContent">
   <span id="appTitle">My<i>App&trade;</i></span>
@@ -21,8 +21,16 @@
   <div id="myProfile">
   <span class="dot"></span>
 
+<div id="popUp">
+  <button id="closePopUp">X</button>
+  <h4 id="popUpTitle">Welcome To My<i>App&trade;</h4>
+    <ul id="popUpContent">
+        <li><a href="#">You Have A New Message</a></li>
+        <li><a href="#">You Have A New Traffic Update</a></li>
+    </ul>
+</div>
+  <a href="#" id="bellMessage"  >
 
-  <a href="#" class="bellMessage"  data-tip="You Have 2 New Messages & a Friend Request" tabindex="1">
 
   <svg class="bellIcon" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
   	 viewBox="0 0 32 32" style="enable-background:new 0 0 32 32;" xml:space="preserve">
